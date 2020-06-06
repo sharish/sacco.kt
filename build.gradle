@@ -36,7 +36,6 @@ dependencies {
         exclude group: "com.github.komputing.kethereum", module: "bip39_wordlist_ko"
         exclude group: "com.github.komputing.kethereum", module: "bip39_wordlist_zh-Hans"
         exclude group: "com.github.komputing.kethereum", module: "bip39_wordlist_zh-Hant"
-        exclude group: "com.github.komputing.kethereum", module: "extensions_kotlin"
         exclude group: "com.github.komputing.kethereum", module: "rlp"
         exclude group: "com.github.komputing.kethereum", module: "crypto_impl_bouncycastle"
     }
