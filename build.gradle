@@ -27,8 +27,8 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
 
     // Crypto
-    compile "org.bitcoinj:bitcoinj-core:0.15.1"
-    compile "com.github.komputing:kethereum:0.74.9"
+    compile "org.bitcoinj:bitcoinj-core:0.15.2"
+    compile "com.github.komputing:kethereum:0.82.2"
 
     // Serialization
     compile "com.fasterxml.jackson.core:jackson-databind:2.0.1"

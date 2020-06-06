@@ -130,13 +130,13 @@ data class Wallet internal constructor(
          * Optionally can define a different derivation path setting [lastDerivationPathSegment].
          */
         fun derive(
-            mnemonic: List<String>, networkInfo: NetworkInfo, lastDerivationPathSegment: Int = 0
+            mnemonic: List<String>, networkInfo: NetworkInfo, path: String = BASE_DERIVATION_PATH, lastDerivationPathSegment: Int = 0
         ): Wallet {
 
             if (lastDerivationPathSegment < 0)
                 throw Exception("Invalid index format:  $lastDerivationPathSegment, Number must be positive")
 
-            val keyPair = MnemonicWords(mnemonic).toKey("$BASE_DERIVATION_PATH/$lastDerivationPathSegment").keyPair
+            val keyPair = MnemonicWords(mnemonic).toKey("$path/$lastDerivationPathSegment").keyPair
             return Wallet(
                 privateKey = keyPair.privateKey,
                 publicKey = keyPair.publicKey,
