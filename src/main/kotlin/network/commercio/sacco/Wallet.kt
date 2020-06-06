@@ -130,7 +130,7 @@ data class Wallet internal constructor(
          * Optionally can define a different derivation path setting [lastDerivationPathSegment].
          */
         fun derive(
-            mnemonic: List<String>, networkInfo: NetworkInfo, path: String = BASE_DERIVATION_PATH, lastDerivationPathSegment: Int = 0
+            mnemonic: List<String>, networkInfo: NetworkInfo, path: String, lastDerivationPathSegment: Int = 0
         ): Wallet {
 
             if (lastDerivationPathSegment < 0)
@@ -143,6 +143,14 @@ data class Wallet internal constructor(
                 networkInfo = networkInfo
             )
         }
+
+        /**
+         * Derives the private key from the given [mnemonic] using the specified [networkInfo].
+         * Optionally can define a different derivation path setting [lastDerivationPathSegment].
+         */
+        fun derive(
+            mnemonic: List<String>, networkInfo: NetworkInfo, lastDerivationPathSegment: Int = 0
+        ) = derive(mnemonic, networkInfo, BASE_DERIVATION_PATH, lastDerivationPathSegment)
 
         /**
          * Generates a new random wallet for the given [networkInfo].
