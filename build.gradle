@@ -27,17 +27,27 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
 
     // Crypto
-    compile "org.bitcoinj:bitcoinj-core:0.15.2"
-    compile "com.github.komputing:kethereum:0.82.2"
-
+    implementation "org.bitcoinj:bitcoinj-core:0.15.2"
+    implementation ("com.github.komputing:kethereum:0.82.2") {
+        exclude group: "com.github.komputing.kethereum", module: "bip39_wordlist_es"
+        exclude group: "com.github.komputing.kethereum", module: "bip39_wordlist_fr"
+        exclude group: "com.github.komputing.kethereum", module: "bip39_wordlist_it"
+        exclude group: "com.github.komputing.kethereum", module: "bip39_wordlist_ja"
+        exclude group: "com.github.komputing.kethereum", module: "bip39_wordlist_ko"
+        exclude group: "com.github.komputing.kethereum", module: "bip39_wordlist_zh-Hans"
+        exclude group: "com.github.komputing.kethereum", module: "bip39_wordlist_zh-Hant"
+        exclude group: "com.github.komputing.kethereum", module: "extensions_kotlin"
+        exclude group: "com.github.komputing.kethereum", module: "rlp"
+        exclude group: "com.github.komputing.kethereum", module: "crypto_impl_bouncycastle"
+    }
     // Serialization
-    compile "com.fasterxml.jackson.core:jackson-databind:2.0.1"
-    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.7"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.0.1"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.7"
 
     // Networking
-    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
-    compile "com.squareup.retrofit2:converter-jackson:$retrofit_version"
-    compile "com.squareup.okhttp3:logging-interceptor:4.2.1"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-jackson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.2.1"
 
 
     // --------------------------
